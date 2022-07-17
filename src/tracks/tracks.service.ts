@@ -53,7 +53,7 @@ export class TracksService {
       this.tracks = this.tracks.filter((track) => track.id !== id);
       return;
     }
-    throw new NotFoundException();
+    throw new NotFoundException('Tracks not found.');
   }
 
   async findRemoveArtists(id: string): Promise<void> {

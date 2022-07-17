@@ -56,7 +56,7 @@ export class ArtistsService {
       );
       return updArtist;
     }
-    throw new NotFoundException();
+    throw new NotFoundException('Artist not found.');
   }
 
   async remove(id: string): Promise<void> {
@@ -67,7 +67,7 @@ export class ArtistsService {
       this.artists = this.artists.filter((artist) => artist.id !== id);
       return;
     }
-    throw new NotFoundException();
+    throw new NotFoundException('Artist not found.');
   }
 
   async selectArtist(id: string): Promise<IArtist> {

@@ -52,7 +52,7 @@ export class AlbumsService {
       );
       return updAlbum;
     }
-    throw new NotFoundException();
+    throw new NotFoundException('Album not found.');
   }
 
   async remove(id: string): Promise<void> {
@@ -62,7 +62,7 @@ export class AlbumsService {
       this.albums = this.albums.filter((album) => album.id !== id);
       return;
     }
-    throw new NotFoundException();
+    throw new NotFoundException('Album not found.');
   }
 
   async findRemoveArtists(id: string): Promise<void> {
