@@ -31,7 +31,7 @@ export class TracksService {
   }
 
   async update(id: string, trackDto: UpdateTrackDto): Promise<ITrack> {
-    const track = this.tracks.find((album) => id === track.id);
+    const track = this.tracks.find((track) => id === track.id);
     if (track) {
       let updTrack: ITrack | null = null;
       this.tracks = this.tracks.map((track) =>
@@ -70,7 +70,7 @@ export class TracksService {
   async findRemoveAlbums(id: string): Promise<void> {
     this.tracks = this.tracks.map((track) => {
       if (track.albumId === id) {
-        return { ...track, artistId: null }
+        return { ...track, albumId: null }
       } else {
         return track;
       }
