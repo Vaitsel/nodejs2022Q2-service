@@ -55,4 +55,26 @@ export class TracksService {
     }
     throw new NotFoundException();
   }
+
+  async findRemoveArtists(id: string): Promise<void> {
+    this.tracks = this.tracks.map((track) => {
+      if (track.artistId === id) {
+        return { ...track, artistId: null }
+      } else {
+        return track;
+      }
+    })
+    return;
+  }
+
+  async findRemoveAlbums(id: string): Promise<void> {
+    this.tracks = this.tracks.map((track) => {
+      if (track.albumId === id) {
+        return { ...track, artistId: null }
+      } else {
+        return track;
+      }
+    })
+    return;
+  }
 }
