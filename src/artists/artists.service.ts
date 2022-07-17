@@ -69,4 +69,8 @@ export class ArtistsService {
     }
     throw new NotFoundException();
   }
+
+  async selectArtist(id: string): Promise<IArtist> {
+    return this.artists.find((artist) => id === artist.id);
+  }
 }

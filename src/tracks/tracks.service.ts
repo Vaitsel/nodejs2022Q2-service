@@ -77,4 +77,8 @@ export class TracksService {
     })
     return;
   }
+
+  async selectTrack(id: string): Promise<ITrack> {
+    return this.tracks.find((track) => id === track.id);
+  }
 }

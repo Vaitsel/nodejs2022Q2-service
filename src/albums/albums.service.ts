@@ -75,4 +75,8 @@ export class AlbumsService {
     })
     return;
   }
+
+  async selectAlbum(id: string): Promise<IAlbum> {
+    return this.albums.find((album) => id === album.id);
+  }
 }
